@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block body %}
+
+<h1>This is Profile Page</h1>
+<h1>Welcome {{user}}!</h1>
+
+<p>
+<a class ="btn btn-warning" href="{% url 'passchng' %}">Change Your Old Password</a>
+
+<a class ="btn btn-warning" href="{% url 'passchng2' %}">Change Your Password without Old Password</a>
+<br>
+<a class ="btn btn-info mt-3" href="{% url 'update' %}">Update User Data</a>
+
+</p>
+{% endblock %}
