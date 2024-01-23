@@ -60,8 +60,8 @@ def pass_change(request):
         if request.method =='POST':
             form = PasswordChangeForm(user = request.user,data = request.POST)
             if form.is_valid():
-                messages.success(request,'Password Changed successfully')
                 form.save()
+                messages.success(request,'Password Changed successfully')
                 update_session_auth_hash(request,form.user)
                 return redirect('profile')
         else :
@@ -95,8 +95,9 @@ def change_user_data(request):
         if request.method == 'POST':
             form = ChangeUserData(request.POST,instance = request.user)
             if form.is_valid():
-                messages.success(request,'Account Updated successfully')
                 form.save()
+                messages.success(request,'Account Updated successfully')
+                
                 # print(form.cleaned_data)
         else :
             form = ChangeUserData(instance = request.user)
